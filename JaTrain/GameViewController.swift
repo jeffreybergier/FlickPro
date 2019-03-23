@@ -11,7 +11,9 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    let gameView = GameView(data: FakeData.hiraganaBasicGrid)
+    private let gameView = GameView(data: FakeData.hiraganaBasicGrid)
+    private lazy var bottomConstraint: NSLayoutConstraint = self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.gameView.bottomAnchor)
+    private let keyboardAnimator = KeyboardAnimator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,13 @@ class GameViewController: UIViewController {
             self.view.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.gameView.leadingAnchor),
             self.view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.gameView.topAnchor),
             self.view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: self.gameView.trailingAnchor),
-            self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.gameView.bottomAnchor),
+            self.bottomConstraint,
             ])
+
+        self.keyboardAnimator.animateAlongsideKeyboardChanges = { [unowned self] change in
+            self.bottomConstraint.constant = change.newHeight
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidLayoutSubviews() {

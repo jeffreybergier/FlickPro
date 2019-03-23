@@ -11,6 +11,7 @@ import UIKit
 class GameView: UIView {
 
     let gridView: GridView
+    let textField: GameTextField = GameTextField(frame: .zero)
 
     init(data: Data) {
         self.gridView = GridView(data: data)
@@ -23,11 +24,27 @@ class GameView: UIView {
 
     private func commonInit() {
         self.gridView.translatesAutoresizingMaskIntoConstraints = false
+        self.textField.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.gridView)
+        self.addSubview(self.textField)
         self.addConstraints([
+            self.textField.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.textField.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.textField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.textField.heightAnchor.constraint(equalToConstant: 40),
             self.gridView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.gridView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
             ])
+    }
+
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+
+        if self.window != nil {
+            self.textField.becomeFirstResponder()
+        } else {
+            self.textField.resignFirstResponder()
+        }
     }
 
 }
