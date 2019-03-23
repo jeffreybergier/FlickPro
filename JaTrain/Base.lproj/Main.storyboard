@@ -17,24 +17,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-UM-NOH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </skView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qrP-UM-NOH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3Or-Mv-6x1"/>
-                            <constraint firstItem="qrP-UM-NOH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="4B0-Tb-sA6"/>
-                            <constraint firstItem="qrP-UM-NOH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cr0-nd-A1L"/>
-                            <constraint firstItem="qrP-UM-NOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eF4-MQ-Blq"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="iGV-ZQ-27x"/>
-                    <connections>
-                        <outlet property="gameView" destination="qrP-UM-NOH" id="efk-ga-XXQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

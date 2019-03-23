@@ -6,8 +6,9 @@
 //  Copyright © 2019 Jeffrey Bergier. All rights reserved.
 //
 
+
 enum FakeData {
-    static let hiraganaBasicGrid: [[Character]]
+    static let hiraganaBasicGrid: Data
         = [
             ["あ", "い", "う", "え", "お"],
             ["か", "き", "く", "け", "こ"],

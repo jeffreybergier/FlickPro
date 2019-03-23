@@ -11,15 +11,24 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    @IBOutlet private weak var gameView: SKView!
-    private let gameScene: SKScene! = SKScene(size: .zero)
+    let gameView = GameView(data: FakeData.hiraganaBasicGrid)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.gameScene.backgroundColor = .yellow
-        self.gameView.presentScene(self.gameScene)
+
+        self.gameView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.gameView)
+        self.view.addConstraints([
+            self.view.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.gameView.leadingAnchor),
+            self.view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.gameView.topAnchor),
+            self.view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: self.gameView.trailingAnchor),
+            self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.gameView.bottomAnchor),
+            ])
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
 
 }
 
