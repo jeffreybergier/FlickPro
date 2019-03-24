@@ -17,6 +17,7 @@
 		502157FC2246157E008C2849 /* GameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FB2246157E008C2849 /* GameTextField.swift */; };
 		502157FE22461CA3008C2849 /* KeyboardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FD22461CA3008C2849 /* KeyboardAnimator.swift */; };
 		50215800224720AC008C2849 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FF224720AC008C2849 /* ParentViewController.swift */; };
+		50215802224729FB008C2849 /* KeyboardLanguageObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50215801224729FB008C2849 /* KeyboardLanguageObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		502157FB2246157E008C2849 /* GameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextField.swift; sourceTree = "<group>"; };
 		502157FD22461CA3008C2849 /* KeyboardAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAnimator.swift; sourceTree = "<group>"; };
 		502157FF224720AC008C2849 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		50215801224729FB008C2849 /* KeyboardLanguageObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLanguageObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				502157FB2246157E008C2849 /* GameTextField.swift */,
 				502157F32245CD33008C2849 /* FakeData.swift */,
 				502157FD22461CA3008C2849 /* KeyboardAnimator.swift */,
+				50215801224729FB008C2849 /* KeyboardLanguageObserver.swift */,
 				502157E82245CACD008C2849 /* Assets.xcassets */,
 				502157EA2245CACD008C2849 /* LaunchScreen.storyboard */,
 				502157ED2245CACD008C2849 /* Info.plist */,
@@ -156,6 +159,7 @@
 				502157F82246097F008C2849 /* GridView.swift in Sources */,
 				502157E22245CACB008C2849 /* AppDelegate.swift in Sources */,
 				50215800224720AC008C2849 /* ParentViewController.swift in Sources */,
+				50215802224729FB008C2849 /* KeyboardLanguageObserver.swift in Sources */,
 				502157FA22461299008C2849 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

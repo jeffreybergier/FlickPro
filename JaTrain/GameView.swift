@@ -10,8 +10,9 @@ import UIKit
 
 class GameView: UIView {
 
-    let gridView: GridView
-    let textField: GameTextField = GameTextField(frame: .zero)
+    private let gridView: GridView
+    private let textField: GameTextField = GameTextField(frame: .zero)
+    private lazy var languageObserver: KeyboardLanguageObserver = KeyboardLanguageObserver(to: self.textField)
 
     init(data: Data) {
         self.gridView = GridView(data: data)
@@ -35,6 +36,10 @@ class GameView: UIView {
             self.gridView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.gridView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
             ])
+        
+        self.languageObserver.languageChanged = { newLocale in
+            print(newLocale)
+        }
     }
 
     override func didMoveToWindow() {

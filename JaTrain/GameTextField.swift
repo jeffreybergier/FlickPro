@@ -24,6 +24,7 @@ class GameTextField: UITextField {
 
     private func commonInit() {
         self.delegate = self
+        self.borderStyle = UITextField.BorderStyle.roundedRect
     }
 }
 
@@ -33,7 +34,7 @@ extension GameTextField: UITextFieldDelegate {
                    replacementString string: String) -> Bool
     {
         self.characterReceived?(Character(string))
-        return false
+        return true
     }
 
 }
