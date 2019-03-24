@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		502157E22245CACB008C2849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157E12245CACB008C2849 /* AppDelegate.swift */; };
 		502157E42245CACB008C2849 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157E32245CACB008C2849 /* GameViewController.swift */; };
-		502157E72245CACB008C2849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502157E52245CACB008C2849 /* Main.storyboard */; };
 		502157E92245CACD008C2849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502157E82245CACD008C2849 /* Assets.xcassets */; };
 		502157EC2245CACD008C2849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502157EA2245CACD008C2849 /* LaunchScreen.storyboard */; };
 		502157F42245CD33008C2849 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157F32245CD33008C2849 /* FakeData.swift */; };
@@ -17,13 +16,13 @@
 		502157FA22461299008C2849 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157F922461299008C2849 /* GameView.swift */; };
 		502157FC2246157E008C2849 /* GameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FB2246157E008C2849 /* GameTextField.swift */; };
 		502157FE22461CA3008C2849 /* KeyboardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FD22461CA3008C2849 /* KeyboardAnimator.swift */; };
+		50215800224720AC008C2849 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502157FF224720AC008C2849 /* ParentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		502157DE2245CACB008C2849 /* JaTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		502157E12245CACB008C2849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		502157E32245CACB008C2849 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		502157E62245CACB008C2849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		502157E82245CACD008C2849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		502157EB2245CACD008C2849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		502157ED2245CACD008C2849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		502157F922461299008C2849 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		502157FB2246157E008C2849 /* GameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextField.swift; sourceTree = "<group>"; };
 		502157FD22461CA3008C2849 /* KeyboardAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAnimator.swift; sourceTree = "<group>"; };
+		502157FF224720AC008C2849 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				502157E12245CACB008C2849 /* AppDelegate.swift */,
+				502157FF224720AC008C2849 /* ParentViewController.swift */,
 				502157E32245CACB008C2849 /* GameViewController.swift */,
 				502157F72246097F008C2849 /* GridView.swift */,
 				502157F922461299008C2849 /* GameView.swift */,
 				502157FB2246157E008C2849 /* GameTextField.swift */,
 				502157F32245CD33008C2849 /* FakeData.swift */,
 				502157FD22461CA3008C2849 /* KeyboardAnimator.swift */,
-				502157E52245CACB008C2849 /* Main.storyboard */,
 				502157E82245CACD008C2849 /* Assets.xcassets */,
 				502157EA2245CACD008C2849 /* LaunchScreen.storyboard */,
 				502157ED2245CACD008C2849 /* Info.plist */,
@@ -139,7 +139,6 @@
 			files = (
 				502157EC2245CACD008C2849 /* LaunchScreen.storyboard in Resources */,
 				502157E92245CACD008C2849 /* Assets.xcassets in Resources */,
-				502157E72245CACB008C2849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +155,7 @@
 				502157E42245CACB008C2849 /* GameViewController.swift in Sources */,
 				502157F82246097F008C2849 /* GridView.swift in Sources */,
 				502157E22245CACB008C2849 /* AppDelegate.swift in Sources */,
+				50215800224720AC008C2849 /* ParentViewController.swift in Sources */,
 				502157FA22461299008C2849 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,14 +163,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		502157E52245CACB008C2849 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				502157E62245CACB008C2849 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		502157EA2245CACD008C2849 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -305,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6ESYGU6CV;
 				INFOPLIST_FILE = JaTrain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6ESYGU6CV;
 				INFOPLIST_FILE = JaTrain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

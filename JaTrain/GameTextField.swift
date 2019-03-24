@@ -10,6 +10,8 @@ import UIKit
 
 class GameTextField: UITextField {
 
+    var characterReceived: ((Character) -> Void)?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
@@ -30,7 +32,8 @@ extension GameTextField: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool
     {
-        return true
+        self.characterReceived?(Character(string))
+        return false
     }
 
 }

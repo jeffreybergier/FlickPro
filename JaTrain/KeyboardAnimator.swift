@@ -28,7 +28,7 @@ class KeyboardAnimator: NSObject {
 
     /// Add animatable changes to this closure
     /// They will be animated when the keyboard shows, changes height, or hides
-    var animateAlongsideKeyboardChanges: ((Change) -> Void)?
+    var animateAlongsideKeyboardChanges: (alongSide: (Change) -> Void, afterCompletion: ((Change, Bool) -> Void)?)?
 
     override init() {
         super.init()
@@ -45,13 +45,16 @@ class KeyboardAnimator: NSObject {
             let animationCurve = notification.keyboardAnimationCurve,
             animationDuration > 0 // don't animate if the duration is 0
         else {
-            self.animateAlongsideKeyboardChanges?(changes)
+            self.animateAlongsideKeyboardChanges?.alongSide(changes)
+            self.animateAlongsideKeyboardChanges?.afterCompletion?(changes, false)
             return
         }
         let options = UIView.AnimationOptions(rawValue: animationCurve)
         UIView.animate(withDuration: animationDuration, delay: 0, options: options, animations: {
-            self.animateAlongsideKeyboardChanges?(changes)
-        }, completion: nil)
+            self.animateAlongsideKeyboardChanges?.alongSide(changes)
+        }, completion: { success in
+            self.animateAlongsideKeyboardChanges?.afterCompletion?(changes, success)
+        })
     }
 
     @objc private func keyboardWillPresent(_ notification: Notification) {
