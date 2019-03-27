@@ -15,6 +15,10 @@ class GridView: UIView {
     let data: Data
     var parentStackView: UIStackView!
 
+    var allViews: [UIView] {
+        return self.parentStackView.arrangedSubviews.flatMap({ ($0 as! UIStackView).arrangedSubviews })
+    }
+
     init(data: Data) {
         self.data = data
         super.init(frame: .zero)
@@ -37,6 +41,12 @@ class GridView: UIView {
             ])
     }
 
+    func view(at indexPath: IndexPath) -> UIView {
+        let row = self.parentStackView.arrangedSubviews[indexPath.section] as! UIStackView
+        let view = row.arrangedSubviews[indexPath.row]
+        return view
+    }
+
     override func didMoveToWindow() {
         super.didMoveToWindow()
 
@@ -50,6 +60,7 @@ class GridView: UIView {
             let views = row.map() { char -> UILabel in
                 let label = UILabel(frame: .zero)
                 label.text = String(char)
+                label.textAlignment = .center
                 label.addConstraints([
                     label.widthAnchor.constraint(equalToConstant: 40),
                     label.heightAnchor.constraint(equalToConstant: 40)

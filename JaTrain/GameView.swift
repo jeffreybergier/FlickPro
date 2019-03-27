@@ -42,6 +42,29 @@ class GameView: UIView {
         }
     }
 
+    func focusItem(at indexPath: IndexPath,
+                   animated: Bool = true,
+                   completionHandler: ((Bool) -> Void)? = nil)
+    {
+        // get the transform of the new selected item
+        let view = self.gridView.view(at: indexPath)
+        // get all the other transforms
+        let allViews = self.gridView.allViews
+        // animate them into place
+        let finalState = {
+            allViews.forEach({ $0.transform = .identity })
+            view.transform = CGAffineTransform(scaleX: 4, y: 4)
+        }
+        guard animated else {
+            finalState()
+            completionHandler?(false)
+            return
+        }
+        UIView.animate(withDuration: 0.3,
+                       animations: finalState,
+                       completion: completionHandler)
+    }
+
     override func didMoveToWindow() {
         super.didMoveToWindow()
 
